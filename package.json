@@ -1,0 +1,28 @@
+{
+  "name": "socket-chat-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Socket Chat App",
+  "main": "index.tsx",
+  "keywords": [],
+  "author": "Mostafa Sameti <mos.sameti@gmail.com>",
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,js}": [
+      "npm run lint",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --mode development --open --hot",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "tsc && eslint src/**/*.{ts,tsx,js} --fix",
+    "build": "webpack --mode production"
+  }
+}
