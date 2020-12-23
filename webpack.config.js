@@ -20,7 +20,7 @@ module.exports = {
     filename:
       env.NODE_ENV === 'production'
         ? '[name].[contenthash].bundle.js'
-        : '[name].[fullhash].bundle.js',
+        : '[name].[hash].bundle.js',
     publicPath: '/',
   },
   module: {
@@ -55,7 +55,7 @@ module.exports = {
     host: 'localhost',
   },
   optimization: {
-    moduleIds: 'deterministic',
+    moduleIds: 'hashed',
     runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
