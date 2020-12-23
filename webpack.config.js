@@ -31,15 +31,11 @@ module.exports = {
         use: ['babel-loader'],
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        test: /\.s[ac]ss$/i,
         use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: './static/fonts',
-            },
-          },
+          "style-loader",
+          "css-loader",
+          "sass-loader",
         ],
       },
     ],
@@ -50,7 +46,7 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
-    port: 3000,
+    port: 9000,
     historyApiFallback: true,
     host: 'localhost',
   },
